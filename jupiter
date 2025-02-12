@@ -1,0 +1,416 @@
+Tables des matières :
+1) Analyse et reformulation le besoin du client..............................................................................3
+2) Les spécifications fonctionnelles et techniques.........................................................................5
+3) Cahier des charges...................................................................................................................6
+4) Estimation des coûts.................................................................................................................8
+5) Retroplanning global................................................................................................................. 9
+6) Matrices des risques & mitigations..........................................................................................10
+7) Grille de notation fournisseur.................................................................................................. 12
+8) Liste de contrôles à effectuer pour valider la conformité de la solution...................................14
+9) Schéma du projet....................................................................................................................16
+Diagramme de Gantt ..................................................................................................................17
+
+1) Analyse et reformulation le besoin du client
+
+Contexte et situation actuelle :
+3iL est une école spécialisée dans les formations du numériques et proposent donc des
+formations liées à la cybersécurité, le développement informatique et l’infrastructure & réseaux.
+Les locaux de 3iL rue de Sainte Anne ne sont plus en capacités d’accueillir la totalité des
+formations. Victime de son succès l’école 3iL se voit dans l’obligation de mettre en place un
+projet pour un bâtiment annexe permettant ainsi à l ‘école de pouvoir supporter l’ensemble des
+formations dans ses locaux.
+
+Objectifs du projets :
+L’objectif du projet est qu’à terme, l’école puisse palier à ce problème de place. Pouvoir
+proposer un bâtiment annexe aux élèves ainsi qu’aux enseignant et leur permettant ainsi de
+suivre les cours. Le but principal de ce projet est d’augmenté sa capacité que ce soit en place
+mais aussi en matériel. De proposer du matériels en adéquation avec les types de cursus
+scolaires proposés par 3iL. D’avoir une infrastructure nécessaire afin de supporter le mode
+dégradé en cas de perte du site rue Saint-Anne.
+Infrastructure existante (pc serveurs et autres)
+Dans les renseignements fournis par 3iL, nous savons juste que 3iL dispose de serveurs
+comprenant l’ensemble des serveurs phares dans une infrastructure, c’est-à-dire l’Active
+Directory, le serveur de fichiers, serveurs ERP et bien d’autres. Qu’actuellement 3iL dispose
+d’un PCA et souhaiterait inclure le bâtiment annexe dans son PCA.
+Contraintes
+
+Dans le cadre les contraintes imposés par 3iL sont très diversifiés. La contrainte à savoir avant
+tout et le délai prévu pour ce projet.
+– Il a été décidé que le bâtiment annexe puisse accueillir les élèves à partir de Septembre
+– Que l’appel d’offre soit publié le Avril
+– Les entreprises ont un délai de 4 semaines pour présenter leurs solutions
+– Début Juin, que toutes les prestataires aient présentés leurs solutions. Que 3iL ait
+sélectionnait son fournisseur.
+– Le projet doit débuter fin Juin
+– Déploiement de l’ensemble de l’infrastructure et de la solution entre le 20 Août et MiSeptembre.
+– L’administrateur système de 3iL Saint-Anne est de retour de congé le 20 Août.
+
+Besoins (logiciels et accès aux ressources et consultation, sécurité et renouvellement
+équipements)
+Actuellement, et dans le cadre de ce projet, l’école a un besoin en terme de matériels mais
+aussi en termes de prestations informatiques.
+
+Pourquoi ces deux axes ?
+
+Parce que l’ouverture de ce nouveau bâtiment va demander tout d’abord du matériels bien
+spécifiques qui seront mis à disposition des élèves. L’ensemble du matériels doit être adaptés
+au enseignements proposés.
+
+D’un point de vue plus technique, le matériels reste tout aussi important d’un point de vue
+infrastructure et sécurité. L’école doit disposé dans ce 2ème bâtiment d’une salle serveur avec
+un serveur ESXi, pouvant supporté le mode dégradé. Automatiquement si l’ensemble du site
+rue Saint-Anne, n’est plus disponible.L’ensemble des serveur seront alors déplacés vers le site
+annexe permettant ainsi de la haute disponibilité et de la sécurité. De plus sur ce serveur ESXi,
+nous pouvons montés certains serveurs tels que l’Active Directory, le serveur de Fichier (pour la
+synchronisation avec ceux du bâtiment principal et en cas de perte du bâtiment principal, que le
+site annexe ait toujours accès à l’ensemble des informations), le serveur ERP ( avec un miroir
+SQL) ou bien même un serveur de sauvegarde avec lecteur LTO sur le site annexe..
+
+D’un point de vue de prestations informatique, l’ensemble de ce projet nécessite donc une
+certaines expertise technique d’où la publication à appel d’offres et ainsi voir ce que les
+fournisseurs proposent en termes d’infrastructures et de sécurité.
+Prochaines étapes
+
+Cette analyse et reformulation du besoin client pour 3iL sera suivi de plusieurs éléments tels la
+rédaction cahier des charges, lancement à appel d’offres, la sélection prestataire et fournisseurs
+la mise en œuvre de l’ensemble du projet.
+
+2) Les spécifications fonctionnelles et techniques
+
+Spécifications techniques :
+
+Spécification technique : Détaille les aspects techniques, comme les matériaux, les normes, les
+performances, et les méthodes de fabrication ou de mise en œuvre. Elle se concentre sur le
+“comment” du produit ou du service.
+Dans le cadre de ce projet de mise en place de bâtiment annexe pour 3iL comprenant une
+infrastructure adéquate, voici les différentes spécifications techniques du projet :
+
+– Infrastructure serveurs (physique ou virtuels) : On retrouve dans cette spécification
+l’ensemble des éléments gravitant l’environnement serveur. C’est-à dire la configuration
+des serveurs physiques ou virtuels, les différents rôles de chaque serveurs, les switchs
+avec les différents protocoles qui doivent être utilisés. (VLAN, SPT et autres...)
+
+– Sécurité (firewall, antivirus & chiffrement des données sensibles) : La sécurité est un
+autre aspect très important. Pour ce bâtiment, la mise en place d’un firewall est
+indispensable permettant ainsi de pouvoir travailler même si le site principal tombe. En
+ce qui concerne les antivirus et le chiffrement des données stockées dans les serveurs,
+il ne s’agit juste que d’éléments supplémentaires au projet permettant ainsi d’accentuer
+sur l’aspect sécuritaire.
+
+– Postes de travail (configuration et os s à mis à jouret antivirus…)
+
+– Contrat de prestation pour la solution maintenance support mis à jour SLA et formation :
+
+Cet aspect technique est à ne pas négliger. En cas de sinistre, le contrat de prestation
+reste un atout dans ce cas-là. Lors de la signature du contrat, les accords de niveaux de
+services ont été mis en place définissant les responsabilités du prestataires( en combien
+de temps le prestataire doit intervenir).
+
+Spécifications fonctionnelles :
+
+Spécification fonctionnelle : Décrit les fonctionnalités et les caractéristiques que le produit ou le
+service doit avoir. Elle se concentre sur le “quoi” et le “pourquoi” du produit ou du service, en
+mettant l’accent sur les besoins et les attentes des utilisateurs finaux.
+
+Voici les différentes spécifications fonctionnelles du projet :
+
+– Sécurité (accès aux données et protections) : Cette spécification fait notamment
+références à l’accessibilité des données site principal.
+– Renouvellement du parc en termes de serveurs, ordinateurs pour les étudiants, serveurs
+comprenant les serveurs physiques et virtuels et les switchs.
+– Communications inter-sites (synchronisations des annuaires Active Directory, serveurs
+de fichiers DFSR réplications des fichiers, sauvegardes des serveurs ...)
+– Que le site secondaire puisse fonctionner en mode dégradé en cas de perte du site
+primaire.
+
+3) Cahier des charges
+
+Contexte et objectifs :
+
+3iL est une école spécialisée dans les formations du numériques et proposent donc des
+formations liées à la cybersécurité, le développement informatique et l’infrastructure & réseaux.
+Les locaux de 3iL rue de Sainte Anne ne sont plus en capacités d’accueillir la totalité des
+formations. Victime de son succès l’école 3iL se voit dans l’obligation de mettre en place un
+projet pour un bâtiment annexe permettant ainsi à l ‘école de pouvoir supporter l’ensemble des
+formations dans ses locaux.
+
+L’objectif du projet :
+L’objectif de ce projet est de mettre en place une infrastructure pour le bâtiment annexe de 3iL.
+Cette infrastructure devra sera conformé à l’ensemble des exigences techniques de 3iL.
+Périmètre du projet
+Ce projet inclus l’aspect fonctionnelle et technique du projet. L’ensemble des spécifications sont
+décrites dans ce dossier à appel d’offres.
+
+Contraintes :
+
+Dans le cadre les contraintes imposés par 3iL sont très diversifiés. La contrainte à savoir avant
+tout et le délai prévu pour ce projet.
+– Il a été décidé que le bâtiment annexe puisse accueillir les élèves à partir de Septembre
+– Que l’appel d’offre soit publié le Avril
+– Les entreprises ont un délai de 4 semaines pour présenter leurs solutions
+– Début Juin, que toutes les prestataires aient présentés leurs solutions. Que 3iL ait
+sélectionnait son fournisseur.
+– Le projet doit débuter fin Juin
+– Déploiement de l’ensemble de l’infrastructure et de la solution entre le 20 Août et MiSeptembre.
+– L’administrateur système de 3iL Saint-Anne est de retour de congé le 20 Août.
+
+Méthodologie et approches
+
+Plan de communication : Les différents acteurs du projet pourront utiliser ces différents logiciels
+pour communiquer. Tout d’abord, par mail pour avoir la traçabilité. Ensuite, pour le travail en
+groupe, on peut utiliser Teams afin de mettre à disposition différents fichiers pour un groupe de
+travail. L’aspect collaboratif de Teams est un outil qui peut énormément aider dans le cadre
+d’un projet tel que celui là.
+
+Critères de réussite et évaluation
+• Plan de suivi et de validation : Établir un retroplanning global de l’ensemble du projet afin de
+s ‘assurer du suivi du projet.Plusieurs réunions peuvent donc être mises en places (réunions
+hebdomadaires). Le projet est divisé en plusieurs étapes et dès que l’étapes est effectués cela
+indique la progressions du projet.
+
+Phase 1 : Préparation et appel d’offres (janvier – mars 2025)
+Phase 2 : Acquisition matériel (Avril – juin 2025)
+Phase 3 : Test, formation et finalisation (juillet – août 2025)
+Phase 4 : Mise en service (septembre 2025).
+Documents complémentaires : Tout document supplémentaire pertinent, comme des études de
+marché, des maquettes, des diagrammes, etc.
+
+
+4) Estimation des coûts
+
+a. Matériel
+Postes de travail :
+L’achat de 36 ordinateurs récents dans les 2 salles de TP.
+b. Licence
+Il faut prévoir des licences pour les futurs serveurs virtuels que l’on retrouvera dans le serveur.
+6 Licence Windows * 1500€ = 6000€
+c. Sécurité
+Solutions de sécurité : Les serveurs existants sont déjà pourvus d'une solution de sécurité.
+Audit de sécurité et améliorations : 5 000 €
+d. Services externalisés (prestataire)
+Coût journalier d’un prestataire externe : ~700 € par jour.
+Nombre de jours nécessaires (estimé) : ~30 jours de travail pour la configuration, les tests, et le
+déploiement.
+Total prestation : 21 000 €
+e. Autres coûts
+Formation pour l’administrateur et techniciens : 2 000 €
+Maintenance annuelle supplémentaire : ~5 000 €
+Dans le cadre de ce projet, les coûts sont estimés à environ 156000€.
+9
+5) Retroplanning global
+
+*************commencer par la date de fin de projet puis faire les differentes etapes dans l'ordre inverse*******************
+
+Phase 1 : Préparation et appel d’offres (janvier – mars 2025)
+Janvier 2025 : Définition des besoins précis, rédaction du cahier des charges pour l’appel
+d’offres (1 mois).
+Février 2025 : Lancement de l’appel d’offres pour les prestataires et la solution logicielle.
+Mars 2025 : Sélection du prestataire et des fournisseurs, finalisation des contrats.
+Phase 2 : Acquisition matériel (Avril – juin 2025)
+Avril 2025 : Achat du matériel (postes de travail).
+Mai 2025 : Acquisition du matériel et configuration
+Juin 2025 : Démarrage des travaux pour l’installation des serveurs virtuels et des configurations
+réseaux (switchs Vlan).
+Phase 3 : Test, formation et finalisation (juillet – août 2025)
+Juillet 2025 : Installation des serveurs physique, des serveurs virtuels et des configurations
+réseaux (switchs Vlan).
+A partir du 20 Août 2025 : Tests de la solution dans un environnement réel. Formation des
+techniciens 3iL pour les nouvelles technologies mais aussi de l’infrastructure.
+Phase 4 : Mise en service (septembre 2025).
+
+
+6) Matrices des risques & mitigations
+Probabilité(bas)/Impact
+(droite)
+        Faible Moyen Élevé
+Faible  |     |     |3, 9|
+Moyenne |7    |5,8  |1,2,4,6
+Élevée  |     |     |
+
+Risques : Plans de mitigations
+
+1)Dépendances au prestataires externes :
+Pour pallier à ce risque de dépendances, il est important que durant l’appel d’offre le rôle du
+prestataire soit bien précis. Former au mieux les techniciens de 3iL pour qu’ils ne dépendent
+pas du prestataire et mettre en place une communication active entre les deux parties.
+
+2) Problèmes d’intégration de la nouvelle infrastructure :
+En ce qui concerne les problèmes à l’intégration de la nouvelle infrastructure, il est important
+que durant la phase de test, un test d’intégrations approfondie soit adopté. Pour éviter ce
+risque, on peut privilégier une solution déjà approuvé et testé pour minimiser les risques
+d’incompatibilités.
+
+3) Infrastructure insuffisante :
+3iL demande dans ses spécifications l’ensemble du matériel conformément à son besoin. C’est
+pourquoi, si l’infrastructure ou le matériel ne suffisent pas, il est possible de réaliser un audit
+technique afin de vérifier le bon fonctionnement de l’infrastructure.
+
+4) Sécurité des données :
+Afin d’éviter ce genre de risque, la mise en place de matériel ou bien de protocole de sécurité
+peut être un atout. ( Pare-feu, gestion des accès cryptage des données)
+
+5) Dépassement du budget :
+Le budget est un des aspects les plus importants dans un projet. C’est pourquoi, pour éviter le
+dépassement de budget, il est important d’inclure une marge de 10 à 20% du budget de base.
+Des réunions concernant l’avancement du projet ainsi que l’utilisation du budget peuvent être
+mises en places.
+
+6) Résistance au changement :
+La mise en place d’une bâtiment annexe peut-être synonyme de changement pour certaines
+personnes. C’est pourquoi il est important de prévoir ces risques là en organisant de communiquer auprès des utilisateurs (personnel et techniciens informatiques pour les 
+technologies liés au nouveau bâtiment).
+
+7) Insatisfactions des utilisateurs :
+En proposant une nouvelle solution, avec un nouveau bâtiment annexe, il est important de le
+faire tester avec des utilisateurs finaux afin de par exemple vérifier le temps de latence, la
+connexion à la wifi, l’accessibilité aux données et autres. Un support technique peut-être mis en
+place afin d’éviter ce genre de risques.
+
+8) Mauvaise gestion du planning :
+Avec le budget, les délais sont aussi un aspect important à prendre en compte dans ce projet
+qui doit être abouti pour Septembre 2025. Par conséquent, pour empêcher les risques liés à
+une mauvaise gestion du planning, on peut mettre en place un suivi régulier du projet afin de ne
+pas prendre de retard et avoir une visibilité réelle de l’ensemble du projet ç un instant T. La
+mise à disposition d’un planning détaillé des différentes étapes du projets. Enfin, on peut inclure
+des marges de sécurité dans les délais.
+
+9) Problèmes de synchronisations communications :
+L’une spécification de 3iL était d’avoir une communication constante inter-site. Afin d’éviter ce
+risque-là, il est possible de doubler les liens inter-sites. Le fait d’avoir un deuxième lien fibre
+peut être une solution.
+
+7) Grille de notation fournisseur
+
+***********remplacer les fournisseur par echelle de notation pour l'exemple**********
+***********ajouter des sous critere comme cout de la presta/ respect du budget/ respect du delai de mise en service/ delai de livraison / situation financière/ garantie matos/ avis et temoignage client**************
+******** Notation 1 moins attratif | 10 plus attractifs ******************
+
+|Critères	                            |Poids (%)	|Fournisseur A	|Fournisseur B	|Fournisseur C	|Fournisseur D
+Coût de la solution                  	|XX%	      |Note /10	      |Note /10	      |Note /10	      |Note /10
+Délais de mise en œuvre	              |XX%	      |Note /10	      |Note /10	      |Note /10	      |Note /10
+Pérennité de l’entreprise	            |XX%	      |Note /10	      |Note /10	      |Note /10	      |Note /10
+Garantie du matériel	                |XX%	      |Note /10	      |Note /10	      |Note /10	      |Note /10
+Support et SLA	                      |XX%	      |Note /10	      |Note /10	      |Note /10	      |Note /10
+Expérience sur des projets similaires	|XX%	      |Note /10	      |Note /10	      |Note /10	      |Note /10
+Satisfaction des clients précédents	  |XX%	      |Note /10	      |Note /10	      |Note /10	      |Note /10
+
+Il s’agit de la grille de notation fournisseur permettant ainsi de les mettre en concurrence par
+l’intermédiaire de cette grille.
+Dans cette grille, plusieurs critères ont été pris en comptes. Les coûts, les délais, la pérennité
+de l’entreprise entre autre savoir que l’entreprise pourra nous assurer le support sur X année
+selon le contrat. Un société de prestation sur le point de couler ne peut pas être pris en compte
+dans le cadre de ce projet d’où la présence de ce critère. Les autres critères sont entre pour
+savoir si la garantie du matière optimale, le support avec les accords de niveau de service et
+enfin des critères moins importants tels que les expériences du prestataires dans ce genre de
+projet et la satisfaction client.
+Tous critères avec une note <5 est éliminatoire.
+
+Voici l’application la grille de notation fournisseur pour ce projet pour 4 fournisseurs :
+
+***********Reprendre le tableau et faire des exemple avec les different fournisseurs*****************
+
+La formule est Notes = note prix * poids prix+... Notes satisfactions * poids satisfactions
+A partir de cette grille on peut apercevoir qu’il y a 3 fournisseurs avec différentes solutions et
+que les notes varient d’un fournisseur à un autre. Cette outil de mise en concurrence permet de
+jauger de la faisabilité de ce projet en fonction d’un fournisseur et de choisir le plus approprié.
+Dans ce tableau le fournisseur choisi est le A puisqu’il propose un solution en fonction des
+critères bien meilleures que ces concurrents. L’aspect des notes éliminatoires est limites pour le
+fournisseur B puisque sa pérennité est à 5.
+
+8) Liste de contrôles à effectuer pour valider la conformité de la
+solution
+
+Validation de l'infrastructure matérielle et réseau
+1.1. Vérification des postes de travail : Confirmer que les postes de travail, le serveur, les
+switchs et autres matériels ont été mis en places, conformes aux spécifications du projet.
+1.2. Vérification des connexions fibre optique : S'assurer que le site principale et annexe de 3iL
+sont bien inter-connectées permettant la synchronisation et communication des des
+serveurs.Quand à la fibre optique et à la bande passante est suffisante pour supporter les
+opérations quotidiennes.
+1.3. Tests des connexions réseau : Tester les connexions inter-sites, pour garantir la fluidité des
+échanges de données et l’accès aux données..
+1.4. Vérification des serveurs physiques et virtuels : Valider que les serveurs physiques et
+virtuels utilisés ont bien été configurés conformément au cahier des charges.
+Validation de la solution logicielle
+2.1. Intégration des équipements informatiques : Vérifier que tous les postes de travail, serveur
+et switchs dans e bâtiment annexe ont accès au site distant.
+2.2. Compatibilité des infrastructures : S'assurer que le nouveau la nouvelle infrastructure est
+fonctionnelle, sans conflit de compatibilité.
+Sécurité informatique
+3.1. Mise en place des mesures de sécurité : Valider que les solutions de sécurité existantes
+(antivirus, firewall, protection des données) ont été bien intégrées dans la nouvelle
+infrastructure.
+3.2. Sauvegarde des données : Tester le système de sauvegarde (NAS, LTO) pour confirmer
+que les données de la base centralisée sont bien sauvegardées et récupérables en cas de
+problème.
+3.3. Contrôles d’accès utilisateurs : Vérifier que les droits d’accès sont correctement configurés
+pour les différents utilisateurs.
+Validation des SLA et qualité de service
+4.1. Temps de réponse du système : Mesurer les temps de réponse pour les différentes
+opérations (consultation des données, etc.) et s'assurer qu'ils sont conformes aux attentes
+définies dans le SLA.
+4.2. Disponibilité des services : Effectuer un test de disponibilité des services en mode dégradé
+pour garantir que le système est accessible en continu, sans interruption.
+
+Formation et documentation
+5.1. Formation des utilisateurs : Confirmer que le personnel techniciens informatiques en
+l’occurrence, on reçu une formation adéquate pour l'utilisation des nouveaux outils.
+5.2. Documentation technique : Vérifier que la documentation technique a été fournie,
+notamment pour la gestion de la nouvelle infrastructure.
+Validation finale avec les utilisateurs
+6.1. Retour des utilisateurs : Recueillir les retours des utilisateurs et du personnel utilisateur sur
+les performances du système.
+6.2. Test en conditions réelles : Réaliser un test en conditions réelles sur une période de
+quelques semaines pour s'assurer que le système répond aux besoins.
+
+
+
+                      +----------------------------------+
+                      | redaction du cahier des charge   |
+                      +----------------------------------+
+                                     |
+                                     v
+                 +----------------------------------+
+                 |  Publication de l'appel d'offre  |
+                 |  (Dates)                         |
+                 +----------------------------------+
+                      |           |           |
+                      v           v           v
+                        +--------------------+  
+                        | RDV avecfournisseur|  
+                        |                    |  
+                        +--------------------+  
+                                     |
+                                     v
+                 +----------------------------------+
+                 |  etudes des solutions et choix  | 
+                 |  du fournisseurs  (date)        |
+                 +----------------------------------+
+                      |           |           |
+                      v           v           v
+                        +--------------------+  
+                        | Signature du contrat|  
+                        | (delais, budget, SLA, 
+                        Garantie matériel et autre|  
+                        +--------------------+  
+                                     |
+                                     v
+                 +----------------------------------+
+                 |  A cquisition du matériel       |
+                 |  (date)                         |
+                 +----------------------------------+
+                      |           |           |
+                      v           v           v
+                        +--------------------+ 
+                        | Configuration et test|  
+                        | et formation         |       
+                        +--------------------+                                       
+       
+                                     v
+                 +----------------------------------+
+                 |  Mise en  place de la solution    |
+                 |  (Septembre)                      |
+                 +----------------------------------+
+
+Faire un Gant apres en complément
+  
